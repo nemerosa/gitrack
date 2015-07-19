@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archimate:model xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:archimate="http://www.bolton.ac.uk/archimate" name="Gitrack" id="b487fa4e" version="2.2.1">
+  <folder name="Business" id="e5c1eb37" type="business"/>
+  <folder name="Application" id="fc3ad1d8" type="application">
+    <element xsi:type="archimate:ApplicationComponent" id="9c6bc441" name="model"/>
+    <element xsi:type="archimate:ApplicationComponent" id="bcd0976f" name="jenkins"/>
+    <element xsi:type="archimate:ApplicationComponent" id="c3ce6076" name="client"/>
+    <element xsi:type="archimate:ApplicationComponent" id="06174d24" name="api"/>
+    <element xsi:type="archimate:ApplicationComponent" id="14761c67" name="web"/>
+  </folder>
+  <folder name="Technology" id="2a6cf3dc" type="technology"/>
+  <folder name="Motivation" id="0d1d3cb4" type="motivation"/>
+  <folder name="Implementation &amp; Migration" id="75feefe0" type="implementation_migration"/>
+  <folder name="Connectors" id="2d3b4cff" type="connectors"/>
+  <folder name="Relations" id="c5ce48f1" type="relations">
+    <element xsi:type="archimate:UsedByRelationship" id="e3b8cae2" source="c3ce6076" target="9c6bc441"/>
+    <element xsi:type="archimate:UsedByRelationship" id="7b1bb68e" source="bcd0976f" target="c3ce6076"/>
+    <element xsi:type="archimate:UsedByRelationship" id="79be3b8f" source="06174d24" target="c3ce6076"/>
+    <element xsi:type="archimate:UsedByRelationship" id="e92f3097" source="14761c67" target="06174d24"/>
+  </folder>
+  <folder name="Views" id="81020d9a" type="diagrams">
+    <element xsi:type="archimate:ArchimateDiagramModel" id="9b941e94" name="Default View">
+      <child xsi:type="archimate:DiagramObject" id="a88527e6" textAlignment="2" targetConnections="721a78c0 4f445d81" archimateElement="9c6bc441">
+        <bounds x="612" y="168"/>
+      </child>
+      <child xsi:type="archimate:Note" id="b8a1df4a" textAlignment="1">
+        <bounds x="708" y="72"/>
+        <sourceConnection id="721a78c0" source="b8a1df4a" target="a88527e6"/>
+        <content>Representation of the content of the `gitrack` notes</content>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="aa4653de" textAlignment="2" targetConnections="cc07afe2" archimateElement="bcd0976f">
+        <bounds x="108" y="168"/>
+        <sourceConnection xsi:type="archimate:Connection" id="265d14ec" source="aa4653de" target="ee366dc8" relationship="7b1bb68e"/>
+      </child>
+      <child xsi:type="archimate:Note" id="e7eeaa77" textAlignment="1">
+        <bounds x="192" y="72"/>
+        <sourceConnection id="cc07afe2" source="e7eeaa77" target="aa4653de"/>
+        <content>Jenkins plugin to interact with the annotated Git repository</content>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="ee366dc8" textAlignment="2" targetConnections="265d14ec 31349ae7 815c7b25" archimateElement="c3ce6076">
+        <bounds x="360" y="168"/>
+        <sourceConnection xsi:type="archimate:Connection" id="4f445d81" source="ee366dc8" target="a88527e6" relationship="e3b8cae2"/>
+      </child>
+      <child xsi:type="archimate:Note" id="224e748d" textAlignment="1">
+        <bounds x="444" y="72"/>
+        <sourceConnection id="31349ae7" source="224e748d" target="ee366dc8"/>
+        <content>Java client to interact with the annotated Git repository</content>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="951d6c4c" textAlignment="2" targetConnections="4bbd024e" archimateElement="06174d24">
+        <bounds x="360" y="312"/>
+        <sourceConnection id="94d4c53c" source="951d6c4c" target="4e43d2a6"/>
+        <sourceConnection xsi:type="archimate:Connection" id="815c7b25" source="951d6c4c" target="ee366dc8" relationship="79be3b8f"/>
+      </child>
+      <child xsi:type="archimate:Note" id="4e43d2a6" textAlignment="1" targetConnections="94d4c53c">
+        <bounds x="576" y="300"/>
+        <content>REST API to interact with configured and annotated Git repositories</content>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="b0a5f6b4" textAlignment="2" archimateElement="14761c67">
+        <bounds x="108" y="312"/>
+        <sourceConnection xsi:type="archimate:Connection" id="4bbd024e" source="b0a5f6b4" target="951d6c4c" relationship="e92f3097"/>
+        <sourceConnection id="35563d13" source="b0a5f6b4" target="8551f5e6"/>
+      </child>
+      <child xsi:type="archimate:Note" id="8551f5e6" textAlignment="1" targetConnections="35563d13">
+        <bounds x="120" y="396"/>
+        <content>Web layer to represent the result of queries on annotated Git repositories</content>
+      </child>
+    </element>
+  </folder>
+</archimate:model>
