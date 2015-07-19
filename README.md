@@ -34,6 +34,34 @@ Finally, there is also a `gitrack` Spring Boot application, which can be deploye
 
 For example, we can display a commit graph where commits are filtered according to some criteria and are decorated according to the content of the notes.
 
+## Architecture overview
+
+![Modules](doc/modules.png)
+
+## Integration with Ontrack
+
+A `gitrack` project can be seen as a specific class of project in `ontrack`, with its own specific views and interaction model.
+
+Having such an integration allows to benefit from existing Ontrack features: Git repository management, etc.
+
+Having a specific class of project is not possible yet in Ontrack and such an extension point has to be developed first.
+
+## Architecture guidelines
+
+## Modules
+
+### Config
+
+### Model
+
+### Client
+
+### API
+
+### Web
+
+### Jenkins
+
 ## History
 
 The [Ontrack](https://github.com/nemerosa/ontrack) is born in order to allow to add traceability in the continuous pipelines of many projects and branches:

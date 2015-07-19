@@ -7,6 +7,7 @@
     <element xsi:type="archimate:ApplicationComponent" id="c3ce6076" name="client"/>
     <element xsi:type="archimate:ApplicationComponent" id="06174d24" name="api"/>
     <element xsi:type="archimate:ApplicationComponent" id="14761c67" name="web"/>
+    <element xsi:type="archimate:ApplicationComponent" id="bdd487ef" name="config"/>
   </folder>
   <folder name="Technology" id="2a6cf3dc" type="technology"/>
   <folder name="Motivation" id="0d1d3cb4" type="motivation"/>
@@ -17,6 +18,7 @@
     <element xsi:type="archimate:UsedByRelationship" id="7b1bb68e" source="bcd0976f" target="c3ce6076"/>
     <element xsi:type="archimate:UsedByRelationship" id="79be3b8f" source="06174d24" target="c3ce6076"/>
     <element xsi:type="archimate:UsedByRelationship" id="e92f3097" source="14761c67" target="06174d24"/>
+    <element xsi:type="archimate:UsedByRelationship" id="53e95b04" source="06174d24" target="bdd487ef"/>
   </folder>
   <folder name="Views" id="81020d9a" type="diagrams">
     <element xsi:type="archimate:ArchimateDiagramModel" id="9b941e94" name="Default View">
@@ -50,6 +52,7 @@
         <bounds x="360" y="312"/>
         <sourceConnection id="94d4c53c" source="951d6c4c" target="4e43d2a6"/>
         <sourceConnection xsi:type="archimate:Connection" id="815c7b25" source="951d6c4c" target="ee366dc8" relationship="79be3b8f"/>
+        <sourceConnection xsi:type="archimate:Connection" id="12c97061" source="951d6c4c" target="4cf2714b" relationship="53e95b04"/>
       </child>
       <child xsi:type="archimate:Note" id="4e43d2a6" textAlignment="1" targetConnections="94d4c53c">
         <bounds x="576" y="300"/>
@@ -64,6 +67,15 @@
         <bounds x="120" y="396"/>
         <content>Web layer to represent the result of queries on annotated Git repositories</content>
       </child>
+      <child xsi:type="archimate:DiagramObject" id="4cf2714b" textAlignment="2" targetConnections="12c97061" archimateElement="bdd487ef">
+        <bounds x="360" y="468"/>
+        <sourceConnection id="f2f68cf4" source="4cf2714b" target="299ed3cb"/>
+      </child>
+      <child xsi:type="archimate:Note" id="299ed3cb" textAlignment="1" targetConnections="f2f68cf4">
+        <bounds x="576" y="456"/>
+        <content>Configuration model for the management of Git repositories</content>
+      </child>
     </element>
+    <element xsi:type="archimate:ArchimateDiagramModel" id="c75cb2b0" name="Config View"/>
   </folder>
 </archimate:model>
