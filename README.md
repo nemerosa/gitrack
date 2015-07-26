@@ -85,6 +85,8 @@ The type must be able to parse such mixte notations.
 
 An Ontrack project with a `gitrack` configuration can have its content (branches, builds, validations, etc.) entirely synchronised from the Git notes.
 
+See nemerosa/ontrack#292 for the Ontrack integration.
+
 ## Architecture guidelines
 
 ## Modules
