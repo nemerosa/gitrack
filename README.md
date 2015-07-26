@@ -47,6 +47,36 @@ Finally, there is also a `gitrack` Spring Boot application, which can be deploye
 
 For example, we can display a commit graph where commits are filtered according to some criteria and are decorated according to the content of the notes.
 
+## Types
+
+The different event types (`of`) can be associated with some custom data.
+
+For example, a `validation` event is associated with a status and an optional description. Two notations are possible:
+
+* status only without any description:
+
+```YAML
+- of: validation
+  name: CI
+  at: ...
+  by: jenkins
+  with: PASSED
+```
+
+* status and description:
+
+```YAML
+- of: validation
+  name: QA
+  at: ...
+  by: jenkins
+  with:
+    status: FAILED
+    description: Error in home page
+```
+
+The type must be able to parse such mixte notations.
+
 ## Architecture overview
 
 ![Modules](doc/modules.png)
