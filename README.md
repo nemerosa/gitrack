@@ -9,28 +9,28 @@ The format of the note is a YAML content, event oriented, like:
 
 ```YAML
 - of: build
-      name: 11.8.0-345
-      at: ...
-      by: ...
+  name: 11.8.0-345
+  at: ...
+  by: ...
 - of: validation
-      name: CI
-      at: ...
-      by: jenkins
-      with: PASSED
+  name: CI
+  at: ...
+  by: jenkins
+  with: PASSED
 - of: validation
-      name: QA
-      at: ...
-      by: jenkins
-      with:
-        status: FAILED
-        description: Error in home page
+  name: QA
+  at: ...
+  by: jenkins
+  with:
+    status: FAILED
+    description: Error in home page
 - of: promotion
-      name: COPPER
-      at: ...
-      by: ...
+  name: COPPER
+  at: ...
+  by: ...
 ```
 
-Each event (`of`) is associated with a `type` (`build`, `validation`, etc.) and some required attributes like its `name`, the time (`at`, ISO UTC time) and the originator (`by`). The event can optionally be associated with some extract data (`with`).
+Each event is associated with a type (`of`) and some required attributes like its `name`, the time (`at`, ISO UTC time) and the originator (`by`). The event can optionally be associated with some data (`with`).
 
 Such a content is created:
 
