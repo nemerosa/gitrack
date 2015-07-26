@@ -5,19 +5,32 @@ gitrack
 
 Any traceability, build numbers, versions, promotions, validations, etc., is stored in a [Git Note](https://www.kernel.org/pub/software/scm/git/docs/git-notes.html), stored at _commit_ level in the `gitrack` namespace.
 
-The format of the note is a YAML content, like:
+The format of the note is a YAML content, event oriented, like:
 
 ```YAML
-validation-stamps:
-   CI:
-      timestamp: ...
-      user: jenkins
-      status: PASSED
-promotions:
-   COPPER:
-      timestamp: ...
-      user: jenkins
+- of: build
+      name: 11.8.0-345
+      at: ...
+      by: ...
+- of: validation
+      name: CI
+      at: ...
+      by: jenkins
+      with: PASSED
+- of: validation
+      name: QA
+      at: ...
+      by: jenkins
+      with:
+        status: FAILED
+        description: Error in home page
+- of: promotion
+      name: COPPER
+      at: ...
+      by: ...
 ```
+
+Each event (`of`) is associated with a `type` (`build`, `validation`, etc.) and some required attributes like its `name`, the time (`at`, ISO UTC time) and the originator (`by`). The event can optionally be associated with some extract data (`with`).
 
 Such a content is created:
 
@@ -40,11 +53,7 @@ For example, we can display a commit graph where commits are filtered according 
 
 ## Integration with Ontrack
 
-A `gitrack` project can be seen as a specific class of project in `ontrack`, with its own specific views and interaction model.
-
-Having such an integration allows to benefit from existing Ontrack features: Git repository management, etc.
-
-Having a specific class of project is not possible yet in Ontrack and such an extension point has to be developed first.
+An Ontrack project with a `gitrack` configuration can have its content (branches, builds, validations, etc.) entirely synchronised from the Git notes.
 
 ## Architecture guidelines
 
